@@ -203,17 +203,9 @@ async def account_login(bot: Client, m: Message):
         count = int(raw_text)
 
     try:
-        # Assuming links is a list of lists and you want to process the second element of each sublist
-        for i in range(len(links)):
-            original_url = links[i][1]
+        for i in range(count - 1, len(links)):
 
-            # Replace parts of the URL as needed
-            V = links[i][1].replace("file/d/","uc?export=download&id=")\
-               .replace("www.youtube-nocookie.com/embed", "youtu.be")\
-               .replace("?modestbranding=1", "")\
-               .replace("/view?usp=sharing","")\
-               .replace("youtube.com/embed/", "youtube.com/watch?v=")
-            
+            V = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","") # .replace("mpd","m3u8")
             url = "https://" + V
 
             if "acecwply" in url:
