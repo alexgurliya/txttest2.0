@@ -1,6 +1,3 @@
-I've identified the syntax errors in the `main.py` file. Here is the corrected version of the code:
-
-```python
 import os
 import re
 import sys
