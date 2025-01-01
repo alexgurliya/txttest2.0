@@ -7,8 +7,8 @@
         "video-extract",
         "pyrogram"
     ],
-    "repository": "https://github.com/SudoR2spr/txt-leech-bot",
-    "success_url": "https://t.me/Opleech_WD",
+    "repository": "https://github.com/alexgurliya/txt",
+    "success_url": "https://t.me/JSRBots",
     "stack": "heroku-22",
     "env": {
         "API_ID": {
