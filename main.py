@@ -77,7 +77,7 @@ async def main():
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
-       "𝐇𝐞𝐥𝐥𝐨 ❤️\n\n◆〓◆ ❖ JSRBots ❖ ™ ◆〓◆\n\n❈ I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me ⟰ /Moni Command And Then Follow Few Steps..", reply_markup=InlineKeyboardMarkup(
+       "𝐇𝐞𝐥𝐥𝐨 ❤️\n\n◆〓◆ ❖ JSRBots ❖ ™ ◆〓◆\n\n❈ I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me ⟰ /JSR Command And Then Follow Few Steps..", reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("✜ 𝐉𝐨𝐢𝐧 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜" ,url=f"https://t.me/JSRBots") ],
@@ -94,7 +94,7 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["Moni"]))
+@bot.on_message(filters.command(["JSR"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('डाउनलोड करने के लिए  𝐓𝐱𝐭 𝐅𝐢𝐥𝐞 यहाँ भेजो ⏍')
     input: Message = await bot.listen(editable.chat.id)
