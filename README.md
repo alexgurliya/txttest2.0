@@ -1,3 +1,9 @@
+## Deploy To Google Colab
+
+<a href="https://colab.research.google.com/github/alexgurliya/txttest/blob/main/text_leech_bot.ipynb" target="_blank">
+  <img src="https://ashutoshgoswami24.github.io/Me/img/gc.png" alt="Deploy To Google Colab" style="width:150px;"/>
+</a>
+
 ## Deploy To Koyeb
               
 <a target="/blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/alexgurliya/txt&branch=heroku&name=txt" >
