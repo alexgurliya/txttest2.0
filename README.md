@@ -1,6 +1,6 @@
 ## Deploy To Google Colab
 
-<a href="https://colab.research.google.com/github/alexgurliya/txttest/blob/main/text_leech_bot.ipynb" target="_blank">
+<a href="https://colab.research.google.com/github/alexgurliya/txttest/blob/main/txttest.ipynb" target="_blank">
   <img src="https://ashutoshgoswami24.github.io/Me/img/gc.png" alt="Deploy To Google Colab" style="width:150px;"/>
 </a>
 
