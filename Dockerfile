@@ -18,4 +18,4 @@ RUN mkdir /
 WORKDIR /
 
 # Running MessageSearchBot
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
