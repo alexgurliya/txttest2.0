@@ -1,27 +1,22 @@
-# Set the base image
-FROM python:3.10.6-slim-buster
+#FROM python:3.9.7-slim-buster
+FROM python:3.10.8-slim-buster
 
-# Install required system packages
-RUN apt-get update && \
-    apt-get install -y ffmpeg libsm6 libxext6 curl && \
-    apt-get install -y build-essential python3-dev && \
-    apt-get clean
+RUN apt-get update -y && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends gcc libffi-dev musl-dev ffmpeg aria2 python3-pip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install yt-dlp
-RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \
-    chmod a+rx /usr/local/bin/yt-dlp
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install --no-cache-dir --upgrade -r Installer
 
-# Set the working directory
-WORKDIR /app
+RUN pip3 install pytube
 
-# Copy the requirements file to the working directory
-COPY Installer
+RUN pip3 install yt-dlp
 
-# Install the Python dependencies
-RUN pip install --no-cache-dir -r Installer
+RUN pip3 install cloudscraper
 
-# Copy the rest of the application code
-COPY . .
+ENV COOKIES_FILE_PATH="/app/youtube_cookies.txt"
 
-# Set the command to run the Python script
-CMD ["python", "main.py"]
+#CMD ["python3", "modules/main.py"]
+CMD gunicorn app:app & python3 main.py
