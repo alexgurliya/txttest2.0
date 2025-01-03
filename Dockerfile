@@ -1,21 +1,27 @@
-FROM python:latest
+# Set the base image
+FROM python:3.10.6-slim-buster
 
-# Installing Packages
-RUN apt update && apt upgrade -y
-RUN apt install git curl python3-pip ffmpeg -y
+# Install required system packages
+RUN apt-get update && \
+    apt-get install -y ffmpeg libsm6 libxext6 curl && \
+    apt-get install -y build-essential python3-dev && \
+    apt-get clean
 
-# Updating Pip Packages
-RUN pip3 install -U pip
+# Install yt-dlp
+RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \
+    chmod a+rx /usr/local/bin/yt-dlp
 
-# Copying Requirements
-COPY Installer /Installer
+# Set the working directory
+WORKDIR /app
 
-# Installing Requirements
-RUN cd /
-RUN pip3 install --no-cache-dir --upgrade -r Installer
+# Copy the requirements file to the working directory
+COPY Installer
 
-COPY . /app/
-WORKDIR /app/
+# Install the Python dependencies
+RUN pip install --no-cache-dir -r Installer
 
-# Running MessageSearchBot
-CMD ["python", "app.py"]
+# Copy the rest of the application code
+COPY . .
+
+# Set the command to run the Python script
+CMD ["python", "main.py"]
