@@ -18,4 +18,4 @@ RUN mkdir /txttest2.0
 WORKDIR /txttest2.0
 
 # Running MessageSearchBot
-CMD ["python", "bot.py"]
+CMD ["python", "app.py"]
