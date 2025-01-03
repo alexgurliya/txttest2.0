@@ -14,8 +14,8 @@ COPY Installer /Installer
 RUN cd /
 RUN pip3 install --no-cache-dir --upgrade -r Installer
 
-RUN mkdir /txttest2.0
-WORKDIR /
+COPY . /app/
+WORKDIR /app/
 
 # Running MessageSearchBot
 CMD ["python", "app.py"]
