@@ -14,7 +14,7 @@ COPY Installer /Installer
 RUN cd /
 RUN pip3 install --no-cache-dir --upgrade -r Installer
 
-RUN mkdir /
+RUN mkdir /txttest2.0
 WORKDIR /
 
 # Running MessageSearchBot
